@@ -1,0 +1,12 @@
+TLS certs:
+sudo apt install letsencrypt
+sudo certbot certonly \
+--server https://acme-v02.api.letsencrypt.org/directory \
+--manual \
+--preferred-challenges=dns \
+--agree-tos \
+--email <your email> \
+-d <your domain> \
+-d *.<your domain if you want a wild card certificate>
+
+sudo cp /etc/letsencrypt/live/<your domain>/{privkey,fullchain}.pem certs/
